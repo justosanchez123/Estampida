@@ -49,49 +49,32 @@
 
             <label for="altura">Altura:</label>
             <input type="number" id="altura" name="altura" required><br><br>
+        </fieldset>
+    </form>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let datosProvincias = [];
 
-            <script>
-                let datosProvincias = {};
+            fetch("provincias.json")
+                .then(response => response.json())
+                .then(data => {
+                    datosProvincias = data["provincias"];
+                    const provinciaSelect = document.getElementById("provincia");
+                    provinciaSelect.innerHTML = '<option value="">Seleccioná una provincia</option>';
 
-                fetch("provincias.json")
-                    .then(response => response.json())
-                    .then(data => {
-                        datosProvincias = data;
-                        const provinciaSelect = document.getElementById("provincia");
-                        provinciaSelect.innerHTML = '<option value="">Seleccioná una provincia</option>';
-
-                        Object.keys(datosProvincias).forEach(prov => {
-                            const option = document.createElement("option");
-                            option.value = prov;
-                            option.textContent = prov;
-                            provinciaSelect.appendChild(option);
-                        });
-
-                        provinciaSelect.addEventListener("change", () => {
-                            const municipioSelect = document.getElementById("municipio");
-                            const provincia = provinciaSelect.value;
-
-                            municipioSelect.innerHTML = '<option value="">Seleccioná un municipio</option>';
-
-                            if (datosProvincias[provincia]) {
-                                municipioSelect.disabled = false;
-                                datosProvincias[provincia].forEach(muni => {
-                                    const option = document.createElement("option");
-                                    option.value = muni;
-                                    option.textContent = muni;
-                                    municipioSelect.appendChild(option);
-                                });
-                            } else {
-                                municipioSelect.disabled = true;
-                            }
-                        });
-                    })
-                    .catch(error => {
-                        console.error("Error cargando provincias:", error);
+                    datosProvincias.forEach(prov => {
+                        const option = document.createElement("option");
+                        option.value = prov.id;
+                        option.textContent = prov.nombre;
+                        provinciaSelect.appendChild(option);
                     });
-            </script>
-
+                })
+                .catch(error => {
+                    console.error("Error cargando provincias:", error);
+                });
+        });
+    </script>
 </body>
 
 </html>
