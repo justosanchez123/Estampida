@@ -52,29 +52,63 @@
         </fieldset>
     </form>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            let datosProvincias = [];
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let datosProvincias = [];
+        let datosMunicipios = [];
 
-            fetch("provincias.json")
-                .then(response => response.json())
-                .then(data => {
-                    datosProvincias = data["provincias"];
-                    const provinciaSelect = document.getElementById("provincia");
-                    provinciaSelect.innerHTML = '<option value="">Seleccioná una provincia</option>';
+        const provinciaSelect = document.getElementById("provincia");
+        const municipioSelect = document.getElementById("municipio");
 
-                    datosProvincias.forEach(prov => {
-                        const option = document.createElement("option");
-                        option.value = prov.id;
-                        option.textContent = prov.nombre;
-                        provinciaSelect.appendChild(option);
-                    });
-                })
-                .catch(error => {
-                    console.error("Error cargando provincias:", error);
+        // Paso 1: cargar provincias
+        fetch("provincias.json") // si lo tenés local
+            .then(response => response.json())
+            .then(data => {
+                datosProvincias = data.provincias;
+                provinciaSelect.innerHTML = '<option value="">Seleccioná una provincia</option>';
+                datosProvincias.forEach(prov => {
+                    const option = document.createElement("option");
+                    option.value = prov.id;
+                    option.textContent = prov.nombre;
+                    provinciaSelect.appendChild(option);
                 });
+            })
+            .catch(error => console.error("Error cargando provincias:", error));
+
+        // Paso 2: cargar municipios
+        fetch("municipios.json") // si lo tenés local
+            .then(response => response.json())
+            .then(data => {
+                datosMunicipios = data.municipios;
+            })
+            .catch(error => console.error("Error cargando municipios:", error));
+
+        // Paso 3: escuchar selección de provincia
+        provinciaSelect.addEventListener("change", () => {
+            const provinciaId = provinciaSelect.value;
+            municipioSelect.innerHTML = '<option value="">Seleccioná un municipio</option>';
+
+            if (!provinciaId || datosMunicipios.length === 0) {
+                municipioSelect.disabled = true;
+                return;
+            }
+
+            const municipiosFiltrados = datosMunicipios.filter(
+                m => m.provincia && m.provincia.id === provinciaId
+            );
+
+            municipiosFiltrados.forEach(muni => {
+                const option = document.createElement("option");
+                option.value = muni.id;
+                option.textContent = muni.nombre;
+                municipioSelect.appendChild(option);
+            });
+
+            municipioSelect.disabled = municipiosFiltrados.length === 0;
         });
-    </script>
+    });
+</script>
+
 </body>
 
 </html>
