@@ -44,6 +44,15 @@
             <select id="municipio" name="municipio" required disabled>
                 <option value="">Seleccioná una provincia primero</option>
             </select><br><br>
+
+            <label for="localidad">Localidad:</label>
+            <select id="localidad" name="localidad" required disabled>
+                <option value="">Seleccioná un municipio primero</option>
+            </select><br><br>
+
+                  
+
+
             <label for="calle">Calle:</label>
             <input type="text" id="calle" name="calle" required><br><br>
 
@@ -52,16 +61,20 @@
         </fieldset>
     </form>
 
-<script>
+    <script>
     document.addEventListener("DOMContentLoaded", () => {
         let datosProvincias = [];
         let datosMunicipios = [];
+        let datosLocalidades = [];
+        let datosCalles = [];
 
         const provinciaSelect = document.getElementById("provincia");
         const municipioSelect = document.getElementById("municipio");
+        const localidadSelect = document.getElementById("localidad");
+        const calleSelect = document.getElementById("calle");
 
         // Paso 1: cargar provincias
-        fetch("provincias.json") // si lo tenés local
+        fetch("provincias.json")
             .then(response => response.json())
             .then(data => {
                 datosProvincias = data.provincias;
@@ -76,22 +89,40 @@
             .catch(error => console.error("Error cargando provincias:", error));
 
         // Paso 2: cargar municipios
-        fetch("municipios.json") // si lo tenés local
+        fetch("municipios.json")
             .then(response => response.json())
             .then(data => {
                 datosMunicipios = data.municipios;
             })
             .catch(error => console.error("Error cargando municipios:", error));
 
-        // Paso 3: escuchar selección de provincia
+        // Paso 3: cargar localidades
+        fetch("localidades.json")
+            .then(response => response.json())
+            .then(data => {
+                datosLocalidades = data.localidades;
+            })
+            .catch(error => console.error("Error cargando localidades:", error));
+
+        // Paso 4: cargar calles
+        fetch("calles.json")
+            .then(response => response.json())
+            .then(data => {
+                datosCalles = data.calles;
+            })
+            .catch(error => console.error("Error cargando calles:", error));
+
+        // Al seleccionar provincia -> municipios
         provinciaSelect.addEventListener("change", () => {
             const provinciaId = provinciaSelect.value;
             municipioSelect.innerHTML = '<option value="">Seleccioná un municipio</option>';
+            localidadSelect.innerHTML = '<option value="">Seleccioná un municipio primero</option>';
+            calleSelect.innerHTML = '<option value="">Seleccioná una localidad primero</option>';
+            municipioSelect.disabled = true;
+            localidadSelect.disabled = true;
+            calleSelect.disabled = true;
 
-            if (!provinciaId || datosMunicipios.length === 0) {
-                municipioSelect.disabled = true;
-                return;
-            }
+            if (!provinciaId || datosMunicipios.length === 0) return;
 
             const municipiosFiltrados = datosMunicipios.filter(
                 m => m.provincia && m.provincia.id === provinciaId
@@ -106,8 +137,55 @@
 
             municipioSelect.disabled = municipiosFiltrados.length === 0;
         });
+
+        // Al seleccionar municipio -> localidades
+        municipioSelect.addEventListener("change", () => {
+            const municipioId = municipioSelect.value;
+            localidadSelect.innerHTML = '<option value="">Seleccioná una localidad</option>';
+            calleSelect.innerHTML = '<option value="">Seleccioná una localidad primero</option>';
+            localidadSelect.disabled = true;
+            calleSelect.disabled = true;
+
+            if (!municipioId || datosLocalidades.length === 0) return;
+
+            const localidadesFiltradas = datosLocalidades.filter(
+                l => l.municipio && l.municipio.id === municipioId
+            );
+
+            localidadesFiltradas.forEach(loc => {
+                const option = document.createElement("option");
+                option.value = loc.id;
+                option.textContent = loc.nombre;
+                localidadSelect.appendChild(option);
+            });
+
+            localidadSelect.disabled = localidadesFiltradas.length === 0;
+        });
+
+        // Al seleccionar localidad -> calles
+        localidadSelect.addEventListener("change", () => {
+            const localidadId = localidadSelect.value;
+            calleSelect.innerHTML = '<option value="">Seleccioná una calle</option>';
+            calleSelect.disabled = true;
+
+            if (!localidadId || datosCalles.length === 0) return;
+
+            const callesFiltradas = datosCalles.filter(
+                c => c.localidad && c.localidad.id === localidadId
+            );
+
+            callesFiltradas.forEach(calle => {
+                const option = document.createElement("option");
+                option.value = calle.id;
+                option.textContent = calle.nombre;
+                calleSelect.appendChild(option);
+            });
+
+            calleSelect.disabled = callesFiltradas.length === 0;
+        });
     });
 </script>
+
 
 </body>
 
