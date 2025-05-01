@@ -1,0 +1,29 @@
+h1 {
+    color: goldenrod;
+    background-color: black;
+}
+
+h4 {
+    color: goldenrod;
+    background-color: black;
+}
+
+.textoazul 
+{
+    color: rgb(0, 0, 255);
+    font-size: 140%;
+    font-weight: bold;
+}
+
+.textoazuloscuro
+{
+    color: rgb(0, 0, 114);
+    font-size: 140%;
+    font-weight: bold;
+}
+
+.textogold 
+{
+    color: goldenrod;
+    background-color: black;
+}
