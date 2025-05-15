@@ -1,65 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/Logo-page.ico">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+    <title>Estampida Disegn</title>
 </head>
+
 <body>
-    <heade><!-- Acá estamos dentro del HEADER -->
-        <div>
-            <h3>Estampados </h3>
-            <h1>Estampida Disegn</h1>
-            <h4>Vos te lo imaginás, nosotros te lo diseñamos.</h4>
-            <img src="img/logo.jpg" height="100">
-        </div>
+    <!-- Header -->
+    <header class="textogold" style="background-color: black;">
+        <h3>Estampados</h3>
+        <a href="index.html">
+            <img src="img/ETIQUETA3.png" height="120">
+        </a>
 
-
-        <nav><!-- Acá estamos dentro del NAV -->
-            <ul>
-                <a href="index.html">Inicio</a>
-                <a href="disenos.html">Diseños</a>
-                <a href="estrenos.html">Los más nuevos</a>
-                <a href="otros.html">Otros</a>
-                <a href="ofertas.html">Ofertas</a>
+        <nav>
+            <div>
+                <ul class="textogold">
+                    <li><a class="textogold" href="disenos.html">Diseños</a></li>
+                    <li><a class="textogold" href="otros.html">Otros</a></li>
+                    <li><a class="textogold" href="ofertas.html">Ofertas</a></li>
+                    <li><a class="textogold" href="formulario.html">Registro</a></li>
+                    <li><a class="textogold" href="carrito.html">Carrito</a></li>
+                </ul>
                 <hr>
-            </ul>
+            </div>
         </nav>
-        </header>
+    </header>
 
-        <main><!--Acá estamos dentro del main o cuerpo principal -->
-            <h2>Mirá nuestros diseños</h2>
-            <section>
-                <div>
-                    <img>
-                </div>
-            </section>
-            <h2></h2>
-            <h2></h2>
 
-        </main>
+    <main style="background-color: lightslategrey;"><!--Acá estamos dentro del main o cuerpo principal -->
+        <h2>Mirá nuestros diseños</h2>
+        <section>
+            <div>
+                <img>
+            </div>
+        </section>
+        <h2></h2>
+        <h2></h2>
 
-        <footer><!-- Acá estamos dentro del FOOTER -->
-            <h3>Contactanos:</h3>
-            <a href="tel:+1234567890">Llamar por teléfono</a>
-            <p>O dejanos un mensaje</p>
+    </main>
 
-            <form action="https://formspree.io/mvgkeejj" method="POST">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+    <footer><!-- Acá estamos dentro del FOOTER -->
+        <h3>Contactanos:</h3>
+        <a href="tel:+1234567890">Llamar por teléfono</a>
+        <p>O dejanos un mensaje</p>
 
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required><br><br>
+        <form action="https://formspree.io/mvgkeejj" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-                <label for="mensaje">Tu mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br><br>
 
-                <button type="submit">Enviar</button>
-            </form>
-            <a href="https://wa.me/5491151104733?text=¡Hola!%20Quiero%20realizar%20un%20pedido%20a%20la%20pizzería"
-                target="_blank">Enviar mensaje por WhatsApp</a>
-            &#169; Estampida Disegn, Todos los derechos reservados.
-        </footer>
+            <label for="mensaje">Tu mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <a href="https://wa.me/5491151104733?text=¡Hola!%20Quiero%20realizar%20un%20pedido%20a%20la%20pizzería"
+            target="_blank">Enviar mensaje por WhatsApp</a>
+        &#169; Estampida Disegn, Todos los derechos reservados.
+    </footer>
+
 </html>

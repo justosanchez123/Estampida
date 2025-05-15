@@ -4,153 +4,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/Logo-page.ico">
+    <link rel="icon" href="img/Logo-page.ico">    
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
     <title>Estampida Disegn</title>
 </head>
 
 <body>
-    <header style="background-color: black;"><!-- Acá estamos dentro del HEADER -->
-        <div>
-            <h3>Estampados </h3>
-            <h1>Estampida Disegn</h1>
-                   
-            <img src="img/logo.jpg" height="200">
-            <h4 style="color: goldenrod);">Vos te lo imaginás, nosotros te lo diseñamos.</h4> 
-        </div>
-            <nav>  <!-- Acá estamos dentro del NAV -->
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="disenos.html">Diseños</a></li>
-                    <li><a href="nuevos.html">Los más nuevos</a></li>
-                    <li><a href="otros.html">Otros</a></li>
-                    <li><a href="ofertas.html">Ofertas</a></li>
-                    <li><a href="formulario.html">Registro</a></li>
-                </ul>
-                <hr>
-            </nav>
-        </header>
+    <!-- Header -->
+    <header class="header-container">
+    <div class="top-bar">
+        <h3 class="titulo">Estampados</h3>
+        <nav class="menu-nav">
+            <ul>
+                <li><a href="disenos.html">Diseños</a></li>                
+                <li><a href="otros.html">Otros</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="formulario.html">Registro</a></li>
+                <li><a class="textogold" href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </div>
 
-        <main style="background-color: lightslategrey;"><!--Acá estamos dentro del main o cuerpo principal -->
+    <div class="logo-center">
+        <a href="index.html">
+            <img src="img/ETIQUETA3.png" height="120">
+        </a>
+    </div>
+</header>
 
-            <!-- Sección: Remeras Personalizadas -->
-            <section>
-                <h2 class="textoazul">Remeras Personalizadas</h2>
-                <div class="productos">
-                    <div class="producto">
-                        <video width="300" controls>
-                            <source src="videos/v8.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
-                        <h3 class="textoazul">Remera personalizada "V8"</h3>
-                        <p>Precio: $20.000</p>
-                    </div>
 
-                    <div class="producto">
-                        <video width="300" controls>
-                            <source src="videos/pappo.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
-                        <h3 class="textoazul">Remera personalizada "Pappo"</h3>
-                        <p>Precio: $20.000</p>
-                    </div>
-                    <div class="producto">
-                        <video width="300" controls>
-                            <source src="videos/Renacer.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
-                        <h3 class="textoazul">Remera personalizada "Renacer"</h3>
-                        <p>Precio: $20.000</p>
-                    </div>
-                    <div class="producto">
-                        <video width="300" controls>
-                            <source src="videos/ELY.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
-                        <h3 class="textoazul">Remeras corporativas negras</h3>
-                        <p>Precio: $20.000</p>
-                    </div>
-                    <div class="producto">
-                        <video width="300" autoplay muted loop controls>
-                            <source src="videos/3D Some One.mp4" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
-                        <h3 class="textoazul">Remeras corporativas blancas</h3>
-                        <p>Precio: $20.000</p>
-                    </div>
-
+    <!-- Main Content -->
+    <main style="background-color: rgb(60, 65, 70);">
+        
+        <!-- Sección: Remeras Personalizadas -->
+        <section>
+            <h2 class="textogold">Remeras Personalizadas</h2>
+            <div class="productos">
+                
+                <div class="producto">
+                    <video width="100" controls>
+                        <source src="videos/v8.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                    <h3 class="textoazuloscuro">Remera personalizada "V8"</h3>
+                    <p>Precio: $20.000</p>
                 </div>
-            </section>
 
-            <!-- Sección: Tazas Estampadas -->
-            <section>
-                <h2 class="textoazul">Tazas Estampadas</h2>
-                <div class="productos">
-                    <div class="producto">
-                        <h3 class="textoazuloscuro">Taza "Te quiero mucho"</h3>
-                        <p>Precio: $4.000</p>
-                    </div>
-                    <div class="producto">
-                        <h3 class="textoazuloscuro">Taza "Diseño Gamer"</h3>
-                        <p>Precio: $4.500</p>
-                    </div>
-                    <div class="producto">
-                        <h3 class="textoazuloscuro">Taza "Super Mamá"</h3>
-                        <p>Precio: $4.200</p>
-                    </div>
+                <div class="producto">
+                    <video width="100" controls>
+                        <source src="videos/pappo.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                    <h3 class="textoazuloscuro">Remera personalizada "Pappo"</h3>
+                    <p>Precio: $20.000</p>
                 </div>
-            </section>
 
-            <!-- Sección: Otros Productos -->
-            <section>
-                <h2 class="textoazul">Otros Productos</h2>
-                <div class="productos">
-                    <div class="producto">
-                        <h3 class="textoazuloscuro">Gorra Bordada</h3>
-                        <p>Precio: $6.000</p>
-                    </div>
-                    <div class="producto">
-                        <h3 class="textoazuloscuro">Bolsa de Tela Personalizada</h3>
-                        <p>Precio: $5.500</p>
-                    </div>
-                    <div class="producto">
-                        <h3 class="textoazuloscuro">Cuaderno con Tapa Estampada</h3>
-                        <p>Precio: $7.200</p>
-                    </div>
+                <div class="producto">
+                    <video width="100" controls>
+                        <source src="videos/Renacer.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                    <h3 class="textoazuloscuro">Remera personalizada "Renacer"</h3>
+                    <p>Precio: $20.000</p>
                 </div>
-            </section>
 
-        </main><hr>
+                <div class="producto">
+                    <video width="100" controls>
+                        <source src="videos/ELY.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                    <h3 class="textoazuloscuro">Remeras corporativas negras</h3>
+                    <p>Precio: $20.000</p>
+                </div>
+
+                <div class="producto">
+                    <video width="100" autoplay muted loop controls>
+                        <source src="videos/3D Some One.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                    <h3 class="textoazuloscuro">Remeras corporativas blancas</h3>
+                    <p>Precio: $20.000</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección: Tazas Estampadas -->
+        <section>
+            <h2 class="textogold">Tazas Estampadas</h2>
+            <div class="productos">
+
+                <div class="producto">
+                    <h3 class="textoazuloscuro">Taza "Te quiero mucho"</h3>
+                    <p>Precio: $4.000</p>
+                </div>
+
+                <div class="producto">
+                    <h3 class="textoazuloscuro">Taza "Diseño Gamer"</h3>
+                    <p>Precio: $4.500</p>
+                </div>
+
+                <div class="producto">
+                    <h3 class="textoazuloscuro">Taza "Super Mamá"</h3>
+                    <p>Precio: $4.200</p>
+                </div>
+
+            </div>
+        </section>
+
+        
+        <section>
+            <h2 class="textogold">Otros Productos</h2>
+            <div class="productos">
+
+                <div class="producto">
+                    <h3 class="textoazuloscuro">Gorra Bordada</h3>
+                    <p>Precio: $6.000</p>
+                </div>
+
+                <div class="producto">
+                    <h3 class="textoazuloscuro">Bolsa de Tela Personalizada</h3>
+                    <p>Precio: $5.500</p>
+                </div>
+
+                <div class="producto">
+                    <h3 class="textoazuloscuro">Cuaderno con Tapa Estampada</h3>
+                    <p>Precio: $7.200</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+</body>
+    <hr>
 
 
-        <footer style="background-color: black;"><!-- Acá estamos dentro del FOOTER -->
-            <h3>Contactanos:</h3>
-            <a href="tel:+1234567890">Llamar por teléfono</a>
-            <p>O dejanos un mensaje</p>
+    <footer class="textogold" style="background-color: black;"><!-- Acá estamos dentro del FOOTER -->
+        <h3>Contactanos:</h3>
+        <a class="textogold" href="tel:+1234567890">Llamar por teléfono</a>
+        <p>O dejanos un mensaje</p>
 
-            <form action="https://formspree.io/mvgkeejj" method="POST">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <form action="https://formspree.io/mvgkeejj" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required><br><br>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br><br>
 
-                <label for="mensaje">Tu mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br>
-                <label for="tema">Motivo de contacto:</label>
-                <select name="tema" id="tema">
-                    <option value="consulta">Consulta</option></select>
-                    <option value="sugerencia">Sugerencia</option></select>
-                    <option value="otros">Otros</option></select>
-                <button type="submit">Enviar</button>
-            </form>
-            <a href="https://wa.me/5491151104733?text=¡Hola, gente de  Estampida Design!%20Deseo%20obtener%20más%20información%20sobre%20sus%20productos."
-                target="_blank">Enviar mensaje por WhatsApp</a><br><br>
+            <label for="mensaje">Tu mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br>
+            <label for="tema">Motivo de contacto:</label>
+            <select name="tema" id="tema"><option value="consulta">Consulta</option>            
+            <option value="sugerencia">Sugerencia</option>
+            <option value="otros">Otros</option></select>
+            <button type="submit">Enviar</button>
+        </form>
+        <a class="textogold" href="https://wa.me/5491151104733?text=¡Hola, gente de  Estampida Design!%20Deseo%20obtener%20más%20información%20sobre%20sus%20productos."
+            target="_blank">Enviar mensaje por WhatsApp</a><br><br>
 
-            <a href="https://www.instagram.com/estampida.disegn/" target="_blank">Instagram</a>
+        <a class="textogold" href="https://www.instagram.com/estampida.disegn/" target="_blank">Instagram</a>
 
-            &#169; Estampida Disegn, Todos los derechos reservados.
-        </footer>
+        &#169; Estampida Disegn, Todos los derechos reservados.
+    </footer>
+
 </body>
 
 </html>
