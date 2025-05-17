@@ -1,62 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/Logo-page.ico">    
+    <link rel="icon" href="img/Logo-page.ico">
     <link rel="stylesheet" href="css/styles.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
-    <title>Estampida Disegn</title>
+    <title>Ofertas</title>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="textogold" style="background-color: black;">
-        <h3>Estampados</h3>
-        <a href="index.html">
-            <img src="img/ETIQUETA3.png" height="120">
-        </a>
-        
-        <nav>
-            <div>
-                <ul class="textogold">
-                    <li><a class="textogold" href="disenos.html">Diseños</a></li>                    
-                    <li><a class="textogold" href="otros.html">Otros</a></li>
-                    <li><a class="textogold" href="ofertas.html">Ofertas</a></li>
-                    <li><a class="textogold" href="formulario.html">Registro</a></li>
-                    <li><a class="textogold" href="carrito.html">Carrito</a></li>
-                </ul>
-                <hr>
-            </div>
-        </nav>
-    </header>
+   <header class="header-container">
+  <div class="top-bar">
+    <h3 class="titulo">Estampados</h3>
+
+    <div class="logo-center">
+      <a href="index.html">
+        <img src="img/ETIQUETA3.png" alt="Logo de Estampida" height="120">
+      </a>
+    </div>
+
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="disenos.html">Otros Diseños</a></li>
+        <li><a href="otros.html">Otros</a></li>        
+        <li><a href="formulario.html">Registro</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
     <main style="background-color: lightslategrey;"><!--Acá estamos dentro del main o cuerpo principal -->
             
 
         </main>
 
-        <footer><!-- Acá estamos dentro del FOOTER -->
-            <h3>Contactanos:</h3>
-            <a href="tel:+1234567890">Llamar por teléfono</a>
-            <p>O dejanos un mensaje</p>
+            <footer class="textogold" style="background-color: black;"><!-- Acá estamos dentro del FOOTER -->
+        <h3>Contactanos:</h3>
+        <a class="textogold" href="tel:+1234567890">Llamar por teléfono</a>
+        <p>O dejanos un mensaje</p>
 
-            <form action="https://formspree.io/mvgkeejj" method="POST">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <form action="https://formspree.io/mvgkeejj" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required><br><br>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br><br>
 
-                <label for="mensaje">Tu mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
+            <label for="mensaje">Tu mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br>
+            <label for="tema">Motivo de contacto:</label>
+            <select name="tema" id="tema">
+                <option value="consulta">Consulta</option>
+                <option value="sugerencia">Sugerencia</option>
+                <option value="otros">Otros</option>
+            </select>
+            <button type="submit">Enviar</button>
+        </form>
+        <a class="textogold"
+            href="https://wa.me/5491151104733?text=%C2%A1Hola%2C%20gente%20de%20Estampida%20Design%21%20Deseo%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos."
+            target="_blank">
+            Enviar mensaje por WhatsApp
+        </a>
+        <br><br>
 
-                <button type="submit">Enviar</button>
-            </form>
-            <a href="https://wa.me/5491151104733?text=¡Hola!%20Quiero%20realizar%20un%20pedido%20a%20la%20pizzería"
-                target="_blank">Enviar mensaje por WhatsApp</a>
-            &#169; Estampida Disegn, Todos los derechos reservados.
-        </footer>
+        <a class="textogold" href="https://www.instagram.com/estampida.disegn/" target="_blank">Instagram</a>
+
+        &#169; Estampida Disegn, Todos los derechos reservados.
+    </footer>
 </html>
